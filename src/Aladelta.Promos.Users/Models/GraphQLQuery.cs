@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 
-namespace Aladelta.Promos.User.Models
+namespace Aladelta.Promos.Users.Models
 {
     public class GraphQLQuery
     {

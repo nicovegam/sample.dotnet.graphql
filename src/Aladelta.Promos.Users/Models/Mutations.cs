@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Aladelta.Promos.User.Models
+namespace Aladelta.Promos.Users.Models
 {
-    public class PromoUserMutation
+    public class Mutations
     {
     }
 }

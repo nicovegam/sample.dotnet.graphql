@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Aladelta.Promos.User.Core.Data;
-using Aladelta.Promos.User.Models;
-using Aladelta.Promos.Users.Helpers;
+using Aladelta.Promos.Users.Core.Data;
 using Aladelta.Promos.Users.Models;
+using Aladelta.Promos.Users.Helpers;
 using Aladeta.Promos.Users.Data;
 using Aladeta.Promos.Users.Data.Repositories;
 using GraphiQl;
@@ -17,6 +16,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Aladelta.Promos.Users.Types;
 
 namespace Aladelta.Promos.User
 {
@@ -40,12 +40,14 @@ namespace Aladelta.Promos.User
             services.AddDbContext<PromoUserContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:NHLStatsDb"]));
             services.AddTransient<IPromoRepository, PromoRepository>();
             services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
-            services.AddSingleton<PromoUserQuery>();
-            services.AddSingleton<PromoUserMutation>();
+            services.AddSingleton<Queries>();
+            services.AddSingleton<Mutations>();
             services.AddSingleton<PromoType>();
+            services.AddSingleton<DiscountPromoType>();
+            services.AddSingleton<SpecialPrizePromoType>();
             //services.AddSingleton<PromoInputType>();
             var sp = services.BuildServiceProvider();
-            services.AddSingleton<ISchema>(new PromoUserSchema(new FuncDependencyResolver(type => sp.GetService(type))));
+            services.AddSingleton<ISchema>(new GraphQLSchema(new FuncDependencyResolver(type => sp.GetService(type))));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

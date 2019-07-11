@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Aladelta.Promos.User.Models;
+using Aladelta.Promos.Users.Models;
 using GraphQL;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Aladelta.Promos.User.Controllers
+namespace Aladelta.Promos.Users.Controllers
 {
     [Route("[controller]")]
     public class GraphQLController : Controller

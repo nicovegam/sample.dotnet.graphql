@@ -1,4 +1,4 @@
-﻿using Aladelta.Promos.User.Core.Models;
+﻿using Aladelta.Promos.Users.Core.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

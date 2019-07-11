@@ -1,4 +1,4 @@
-﻿using Aladelta.Promos.User.Core.Data;
+﻿using Aladelta.Promos.Users.Core.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System;
